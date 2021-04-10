@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Chatbot</p>
+        <p>Welcome to [Chatbot Name]!</p>
       </header>
     </div>
   );
