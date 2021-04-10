@@ -1,4 +1,4 @@
-import './App.css';
+import '../styles/App.css';
 import React, { useState } from 'react';
 import Intro from './Intro.js';
 import Chatbox from './Chatbox.js';
