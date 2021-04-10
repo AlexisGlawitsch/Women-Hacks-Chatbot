@@ -1,24 +1,66 @@
 .App {
   text-align: center;
-  background-color: #efefef;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
-.ChatBox {
+.chatbox {
   background-color: #FAFAFA;
+  font-size: 16px;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.p-squished {
+  line-height: 40%;
 }
 
-.App-link {
-  color: #61dafb;
+.circle-button {
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: black;
+  outline: none;
+}
+
+.color-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 15px 0px 15px;
+}
+
+.color-red {
+  background-color: #FF7C7C;
+}
+
+.color-orange {
+  background-color: #FFC47F;
+}
+
+.color-yellow {
+  background-color: #FFDC26;
+}
+
+.color-green {
+  background-color: #93F37B;
+}
+
+.color-blue{
+  background-color: #73C6D9;
+}
+
+.color-purple {
+  background-color: #B67DFF;
+}
+
+.color-black {
+  background-color: #56555A;
+}
+
+.color-default {
+  background-color: #efefef;
 }
