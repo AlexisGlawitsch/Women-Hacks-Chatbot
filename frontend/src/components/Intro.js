@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/App.css';
 
 function Intro(props) {
@@ -10,13 +10,13 @@ function Intro(props) {
         </div>
         <p>To begin, please select a color:</p>
         <div className="color-list">
-          <CircleButton color="color-red" onClick={props.onColorClick}></CircleButton>
-          <CircleButton color="color-orange" onClick={props.onColorClick}></CircleButton>
-          <CircleButton color="color-yellow" onClick={props.onColorClick}></CircleButton>
-          <CircleButton color="color-green" onClick={props.onColorClick}></CircleButton>
-          <CircleButton color="color-blue" onClick={props.onColorClick}></CircleButton>
-          <CircleButton color="color-purple" onClick={props.onColorClick}></CircleButton>
-          <CircleButton color="color-black" onClick={props.onColorClick}></CircleButton>
+          <CircleButton color="color-red" text="angry" onClick={props.onColorClick}></CircleButton>
+          <CircleButton color="color-orange" text="anxious" onClick={props.onColorClick}></CircleButton>
+          <CircleButton color="color-yellow" text="happy" onClick={props.onColorClick}></CircleButton>
+          <CircleButton color="color-green" text="calm" onClick={props.onColorClick}></CircleButton>
+          <CircleButton color="color-blue" text="sad" onClick={props.onColorClick}></CircleButton>
+          <CircleButton color="color-purple" text="energetic" onClick={props.onColorClick}></CircleButton>
+          <CircleButton color="color-black" text="tired" onClick={props.onColorClick}></CircleButton>
         </div>
         {props.allowContinue ?
           <button className="block-button color-grey" onClick={props.onContinueClick}>
@@ -31,11 +31,17 @@ function Intro(props) {
   }
   
   function CircleButton(props) {
+    const [displayText, setDisplayText] = useState(false);
+
     return (
       <button 
         className={`circle-button ${props.color}`}
         onClick={() => props.onClick(props.color)}
-      />
+        onMouseOver={() => setDisplayText(true)}
+        onMouseLeave={() => setDisplayText(false)}
+      >
+        <p className="color-label">{displayText && props.text}</p>
+      </button>
     )
   }
 

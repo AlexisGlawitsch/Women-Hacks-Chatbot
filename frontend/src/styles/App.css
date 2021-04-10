@@ -98,9 +98,15 @@ textarea:focus {
   width: 50px;
   border: none;
   border-radius: 50%;
+  color: white;
   background-color: black;
   outline: none;
   margin: 2px;
+}
+
+.color-label {
+  text-align: center;
+  font-size: 80%;
 }
 
 .block-button {
