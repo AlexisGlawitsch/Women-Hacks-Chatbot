@@ -5,18 +5,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: black;
 }
 
 .box {
   text-align: center;
   background-color: #FAFAFA;
   font-size: 16px;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  border-radius: 1%;
+  color: #1c1d1f;
+}
+
+.introbox {
+  padding: 20px;
 }
 
 .chatbox {
@@ -24,6 +28,60 @@
   max-height: 75vh;
   width: 60vw;
   max-width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  bottom: 5%;
+  overflow-y: scroll;
+}
+
+.textbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-bubble {
+  position: absolute;
+  border-radius: 3%;
+  padding: 1%;
+  max-width: 40%;
+  line-height: 85%;
+}
+
+.bubble-row {
+  position: relative;
+  height: auto;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.side-left {
+  left: 5%;
+  text-align: left;
+}
+
+.side-right {
+  right: 5%;
+  text-align: right;
+}
+
+textarea {
+  resize: none;
+  width: 80%;
+  border-color: #C6C6C6;
+  border-radius: 5%;
+  font: inherit;
+}
+
+textarea:focus {
+  outline: none;
 }
 
 .p-squished {
@@ -44,8 +102,8 @@
   height: 50px;
   width: 100px;
   border: none;
+  border-radius: 5%;
   font-size: 16px;
-  background-color: grey;
   color: white;
   outline: none;
 }
@@ -57,9 +115,10 @@ button:disabled {
 
 .color-list {
   display: flex;
+  width: auto;
   justify-content: space-between;
   align-content: space-between;
-  margin: 0px 15px 15px 15px;
+  margin: 0px 0px 15px 0px;
 }
 
 .color-red {
@@ -92,4 +151,12 @@ button:disabled {
 
 .color-default {
   background-color: #efefef;
+}
+
+.color-grey {
+  background-color: grey;
+}
+
+.color-light-grey {
+  background-color: #F0F1F2;
 }

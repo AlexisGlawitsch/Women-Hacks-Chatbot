@@ -3,7 +3,7 @@ import React from 'react';
 
 function Intro(props) {
     return (
-      <div className="box">
+      <div className="box introbox">
         <div className="p-squished">
           <p>Welcome to [Chatbot Name]!</p>
           <p>You can talk to me about anything related to mental health.</p>
@@ -19,7 +19,7 @@ function Intro(props) {
           <CircleButton color="color-black" onClick={props.onColorClick}></CircleButton>
         </div>
         {props.allowContinue ?
-          <button className="block-button" onClick={props.onContinueClick}>
+          <button className="block-button color-grey" onClick={props.onContinueClick}>
             Continue
           </button>
           : <button disabled className="block-button" onClick={props.onContinueClick}>

@@ -21,7 +21,7 @@ function App() {
           allowContinue={allowContinue}
           onContinueClick={() => setShowIntro(false)}
         />
-        : <Chatbox/>
+        : <Chatbox color={theme}/>
       }
     </div>
   );
