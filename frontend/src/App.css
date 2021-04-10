@@ -8,10 +8,22 @@
   color: black;
 }
 
-.chatbox {
+.box {
+  text-align: center;
   background-color: #FAFAFA;
   font-size: 16px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chatbox {
+  height: 75vh;
+  max-height: 75vh;
+  width: 60vw;
+  max-width: 60vw;
 }
 
 .p-squished {
@@ -25,12 +37,29 @@
   border-radius: 50%;
   background-color: black;
   outline: none;
+  margin: 2px;
+}
+
+.block-button {
+  height: 50px;
+  width: 100px;
+  border: none;
+  font-size: 16px;
+  background-color: grey;
+  color: white;
+  outline: none;
+}
+
+button:disabled {
+  background-color: #aaabad;
+  color: #c9ccd4;
 }
 
 .color-list {
   display: flex;
   justify-content: space-between;
-  margin: 0px 15px 0px 15px;
+  align-content: space-between;
+  margin: 0px 15px 15px 15px;
 }
 
 .color-red {
