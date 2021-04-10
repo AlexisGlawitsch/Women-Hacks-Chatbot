@@ -17,6 +17,8 @@
   justify-content: space-between;
   border-radius: 1%;
   color: #1c1d1f;
+  max-height: 95vh;
+  max-width: 95vw;
 }
 
 .introbox {
@@ -30,7 +32,6 @@
   justify-content: space-around;
   width: 90%;
   padding: 10px;
-  margin-bottom: 10px;
 }
 
 .chatbox {
@@ -39,11 +40,10 @@
   width: 60vw;
   max-width: 60vw;
   overflow-y: scroll;
+  margin-top: 5px;
 }
 
 .chatbox-inner {
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,6 +81,7 @@ textarea {
   width: 80%;
   border-color: #C6C6C6;
   border-radius: 5%;
+  margin-right: 10px;
   font: inherit;
 }
 
