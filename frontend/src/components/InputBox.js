@@ -27,7 +27,7 @@ function InputBox(props) {
   return (
     <div className="box textbox">
       <div className="button-list">
-        {buttonList}
+        {props.awaitingUserResponse && buttonList}
       </div>
     </div>
   )
