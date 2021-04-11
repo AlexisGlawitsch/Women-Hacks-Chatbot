@@ -6,6 +6,7 @@ const defaultResponses = ["None", "Several days", "More than half the days", "Al
 
 function InputBox(props) {
   var buttons;
+  console.log(props);
   if (props.isFirstMessage) {
     buttons = introResponses;
   } else {

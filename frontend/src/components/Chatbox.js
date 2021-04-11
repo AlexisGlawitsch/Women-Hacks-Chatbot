@@ -24,6 +24,7 @@ function Chatbox(props) {
       animation: styles.fadeInRight
     }]);
 
+    console.log('Clicked button with text ' + text);
     var response = sendMessage(text);
     if (response) {
       setBubbles([...bubbles, {
@@ -33,6 +34,10 @@ function Chatbox(props) {
         animation: styles.fadeInLeft
       }]);
     }
+
+    if (isFirstMessage) {
+      setIsFirstMessage(false);
+    }
   }
 
   return (
@@ -41,7 +46,7 @@ function Chatbox(props) {
       {!isConversationEnded &&
         <InputBox
           color={props.color}
-          firstMessage={isFirstMessage}
+          isFirstMessage={isFirstMessage}
           setIsFirstMessage={(val) => setIsFirstMessage(val)}
           onClick={(text) => onClick(text)}
         />
