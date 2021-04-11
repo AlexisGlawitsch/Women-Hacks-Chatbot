@@ -124,6 +124,12 @@ button:disabled {
   color: #c9ccd4;
 }
 
+.button-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .color-list {
   display: flex;
   width: auto;

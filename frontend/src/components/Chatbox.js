@@ -12,14 +12,19 @@ function Chatbox(props) {
     animation: styles.fadeInLeft
   }]);
 
-  function onSubmit(text) {
+  // Placeholder
+  function getNextMessage() {
+    // Gets the next message from the chatbot
+    const message = 0;
+  }
+
+  function onClick(text) {
     setBubbles([...bubbles, {
       message: text,
       color: props.color,
       side: "side-right",
       animation: styles.fadeInRight
     }]);
-    console.log(bubbles);
   }
 
   return (
@@ -27,7 +32,7 @@ function Chatbox(props) {
       <BubbleList bubbles={bubbles} />
       <InputBox
         color={props.color}
-        onSubmit={(text) => onSubmit(text)}
+        onClick={(text) => onClick(text)}
       />
     </div>
   );
