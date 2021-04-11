@@ -9,7 +9,7 @@ const configuration = {
   }
 };
 
-const sessionId = process.env.projectId;
+const sessionId = "123456";
 const languageCode = "en-US";
 const sessionClient = new dialogflow.SessionsClient(configuration);
 
@@ -30,10 +30,12 @@ async function sendMessage(message) {
     .detectIntent(botRequest)
     .then((responses) => {
       console.log(JSON.stringify(responses));
-      const requiredResponse = responses[0].queryResult;
+      res.status(200).send({ data: responses });
+      // const requiredResponse = responses[0].queryResult;
     })
     .catch((error) => {
       console.log(error);
+      res.status(422).send({ e });
     });
 
   return response;
