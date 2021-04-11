@@ -16,7 +16,7 @@ function InputBox(props) {
 
   return (
     <div className="box textbox">
-      <div className="buttonList">
+      <div className="button-list">
         {buttonList}
       </div>
     </div>

@@ -117,6 +117,7 @@ textarea:focus {
   font-size: 16px;
   color: white;
   outline: none;
+  margin: 5px;
 }
 
 button:disabled {
