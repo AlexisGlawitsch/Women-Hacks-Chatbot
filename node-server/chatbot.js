@@ -1,6 +1,7 @@
 const dialogflow = require("@google-cloud/dialogflow");
-
 const config = require("./config");
+const Path = require("path");
+
 const projectId = config.projectId;
 const configuration = {
   credentials: {
@@ -10,8 +11,9 @@ const configuration = {
 };
 
 const sessionId = "123456";
-const languageCode = "en-US";
-const sessionClient = new dialogflow.SessionsClient(configuration);
+const sessionClient = new dialogflow.SessionsClient({
+  keyFilename: Path.join(__dirname, "./key.json")
+});
 
 const sessionPath = sessionClient.projectAgentSessionPath(projectId, sessionId);
 
@@ -21,7 +23,6 @@ async function sendMessage(message) {
     queryInput: {
       text: {
         text: message,
-        languageCode
       }
     }
   };
@@ -30,12 +31,6 @@ async function sendMessage(message) {
     .detectIntent(botRequest)
     .then((responses) => {
       console.log(JSON.stringify(responses));
-      res.status(200).send({ data: responses });
-      // const requiredResponse = responses[0].queryResult;
-    })
-    .catch((error) => {
-      console.log(error);
-      res.status(422).send({ e });
     });
 
   return response;

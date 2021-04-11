@@ -1,3 +1,7 @@
+// Resources used for Node server
+// https://www.smashingmagazine.com/2021/01/dialogflow-agent-react-application/
+// https://codeburst.io/building-scalable-chatbots-in-react-with-dialogflow-1091ff462e40
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -10,14 +14,15 @@ var urlEncoded = bodyParser.urlencoded({ extended: true });
 app.use(cors());
 
 app.post("/chatbot", jsonParser, urlEncoded, function (req, res, next) {
-  const message = req.body.message;
+  const { message } = req.body;
 
   sendMessage(message)
     .then((response) => {
-      res.send({ message: response });
+      res.status(200).send({ message: response });
     })
     .catch((error) => {
       console.log(error);
+      res.status(442).send({ error });
     });
 });
 
