@@ -61,7 +61,7 @@
 .chat-bubble {
   overflow-wrap: break-word;
   border-radius: 3%;
-  padding: 5px;
+  padding: 15px;
   max-width: 20vw;
   line-height: 85%;
 }
