@@ -5,9 +5,6 @@ import BubbleList from './BubbleList.js';
 import InputBox from './InputBox.js';
 import { sendMessage } from "../ApiHandler.js";
 
-const introResponses = ["Thanks", "Sounds cool"];
-const defaultResponses = ["None", "Several days", "More than half the days", "Almost every day"];
-
 function Chatbox(props) {
   const [bubbles, setBubbles] = useState([{
     message: "Placeholder message",
@@ -36,17 +33,6 @@ function Chatbox(props) {
         animation: styles.fadeInLeft
       }]);
     }
-      // .then((response) => {
-      //   setBubbles([...bubbles, {
-      //     message: response.text,
-      //     color: "color-light-grey",
-      //     side: "side-left",
-      //     animation: styles.fadeInLeft
-      //   }]);
-      // })
-      // .catch((error) => {
-      //   console.log(error);
-      // })
   }
 
   return (
@@ -55,7 +41,8 @@ function Chatbox(props) {
       {!isConversationEnded &&
         <InputBox
           color={props.color}
-          buttons={isFirstMessage ? introResponses : defaultResponses}
+          firstMessage={isFirstMessage}
+          setIsFirstMessage={(val) => setIsFirstMessage(val)}
           onClick={(text) => onClick(text)}
         />
       }
