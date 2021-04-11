@@ -5,8 +5,7 @@ function Intro(props) {
     return (
       <div className="box introbox">
         <div className="p-squished">
-          <p>Welcome to [Chatbot Name]!</p>
-          <p>You can talk to me about anything related to mental health.</p>
+          <p>Welcome to Reshma - Let's Talk About Mental Health!</p>
         </div>
         <p>To begin, please select a color:</p>
         <div className="color-list">
