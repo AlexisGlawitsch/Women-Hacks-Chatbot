@@ -2,22 +2,14 @@ import React, { useState } from 'react';
 import '../styles/App.css';
 
 function InputBox(props) {
-  // const [value, setValue] = useState();
-
-  // function handleSubmit(event) {
-  //   event.preventDefault();
-  //   props.onSubmit(value);
-  //   setValue("");
-  // }
-
-  const buttonList = [];
   if (props.buttons) {
-    buttonList = props.buttons.map((button, index) =>
+    var buttonList = props.buttons.map((text, index) =>
       <button 
+        key={index}
         className={`block-button ${props.color}`}
-        onClick={() => props.onClick(button.text)}
+        onClick={() => props.onClick(text)}
       >
-        {button.text}
+        {text}
       </button>
     );
   }
@@ -27,12 +19,6 @@ function InputBox(props) {
       <div className="buttonList">
         {buttonList}
       </div>
-      {/* <form onSubmit={handleSubmit} className="textbox">
-        <textarea 
-          value={value} 
-          onChange={(event) => setValue(event.target.value)}/>
-        <input type="submit" className={`block-button ${props.color}`} />
-      </form> */}
     </div>
   )
 }

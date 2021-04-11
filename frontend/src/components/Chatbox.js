@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import styles from '../styles/styles.js';
 import BubbleList from './BubbleList.js';
 import InputBox from './InputBox.js';
+import { sendMessage } from "../ApiHandler.js";
+
+const introResponses = ["Thanks", "Sounds cool"];
+const defaultResponses = ["None", "Several days", "More than half the days", "Almost every day"];
 
 function Chatbox(props) {
   const [bubbles, setBubbles] = useState([{
@@ -12,11 +16,8 @@ function Chatbox(props) {
     animation: styles.fadeInLeft
   }]);
 
-  // Placeholder
-  function getNextMessage() {
-    // Gets the next message from the chatbot
-    const message = 0;
-  }
+  const [isFirstMessage, setIsFirstMessage] = useState(true);
+  const [isConversationEnded, setIsConversationEnded] = useState(false);
 
   function onClick(text) {
     setBubbles([...bubbles, {
@@ -25,15 +26,39 @@ function Chatbox(props) {
       side: "side-right",
       animation: styles.fadeInRight
     }]);
+
+    var response = sendMessage(text);
+    if (response) {
+      setBubbles([...bubbles, {
+        message: response.text,
+        color: "color-light-grey",
+        side: "side-left",
+        animation: styles.fadeInLeft
+      }]);
+    }
+      // .then((response) => {
+      //   setBubbles([...bubbles, {
+      //     message: response.text,
+      //     color: "color-light-grey",
+      //     side: "side-left",
+      //     animation: styles.fadeInLeft
+      //   }]);
+      // })
+      // .catch((error) => {
+      //   console.log(error);
+      // })
   }
 
   return (
     <div className="box">
       <BubbleList bubbles={bubbles} />
-      <InputBox
-        color={props.color}
-        onClick={(text) => onClick(text)}
-      />
+      {!isConversationEnded &&
+        <InputBox
+          color={props.color}
+          buttons={isFirstMessage ? introResponses : defaultResponses}
+          onClick={(text) => onClick(text)}
+        />
+      }
     </div>
   );
 }
